@@ -9,37 +9,44 @@ weeklyButton.addEventListener('submit', (e) => { e.preventDefault();
 });
 const addExpense = document.querySelector(".expenseForm");
 // const addExpense = document.getElementById("addExpenseButton");
-
+let entertainmentSum = 0;
+let foodSum = 0;
+let clothingSum = 0;
+let billsSum = 0;
+let otherSum = 0;
 addExpense.addEventListener("submit", (e) =>{
   e.preventDefault();
  let getCategories = document.getElementById("categories").value
  let getExpenseAmount = document.getElementById("addExpenseAmount").value;
-  let  entertainmentContainer = document.getElementById("entertainmentOutput");
-  let total = 0;
+
+ 
 //Get Expense detail, add for later.
-console.log(entertainmentContainer);
+
  console.log(getCategories);
  console.log(getExpenseAmount);
 
  if ( getCategories == "Entertainment"){
-   total += getExpenseAmount;
-   console.log("Entertainment: " + total );
+  console.log(getCategories + getExpenseAmount );
+    entertainmentSum += Number(getExpenseAmount);
    
  }  else if (getCategories == "Food") {
-  console.log("Food: " + getExpenseAmount );
-  total += getExpenseAmount;
+  console.log(getCategories + getExpenseAmount);
+    foodSum += Number(getExpenseAmount);
  }else if (getCategories == "Clothing") {
-  console.log("Clothing: " + getExpenseAmount );
-
+  console.log(getCategories + getExpenseAmount );
+    clothingSum += Number(getExpenseAmount);
 }else if (getCategories == "Bills") {
-  console.log("Bill: " + getExpenseAmount );
-
+  console.log(getCategories + getExpenseAmount );
+  billsSum += Number(getExpenseAmount);
 } else {
   getCategories == "Other"
-  console.log("Other: " + getExpenseAmount);
+  console.log(getCategories + getExpenseAmount);
+  otherSum += Number(getExpenseAmount);
 }
 
-
-console.log(total);
-
+console.log("Entertainment sum: " +entertainmentSum);
+console.log("food sum: " +foodSum);
+console.log("clothing sum: "+clothingSum);
+console.log("bills: "+billsSum);
+console.log("other sum: " +otherSum);
 });
