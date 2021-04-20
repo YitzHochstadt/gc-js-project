@@ -49,4 +49,9 @@ console.log("food sum: " +foodSum);
 console.log("clothing sum: "+clothingSum);
 console.log("bills: "+billsSum);
 console.log("other sum: " +otherSum);
+
+let entertainmentTotal = document.getElementById("entertainmentOutput");
+entertainmentTotal.innerText = `Entertainment: $${entertainmentSum}`;
+
 });
+
