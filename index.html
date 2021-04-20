@@ -10,14 +10,16 @@
 
 <body>
   <section class="weekly-budget">
-    <h1>Weekly Budget</h1>
-    <label>How much money do you have for the week?<input type="text" placeholder="$0.00"></label>
-    <button type="submit">Update Budget</button>
+    <form class="budget-form">
+      <h1>Weekly Budget</h1>
+      <label>How much money do you have for the week?<input type="text" id="budget-amount" placeholder="$0.00"></label>
+      <button type="submit">Update Budget</button>
+    </form>
   </section>
 
   <section class="expenses">
     <form>
-      <select name="catergories" id="categories">
+      <select name="categories" id="categories">
         <option>Entertainment</option>
         <option>Food</option>
         <option>Clothing</option>
