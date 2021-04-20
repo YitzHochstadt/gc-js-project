@@ -67,6 +67,12 @@ let weeklyTotal = document.querySelector(".money-spent");
 weeklyTotal.innerText = `$${weeklySpending}`;
 
 
+let budgetStart = document.getElementById("budget-amount").value;
+let remainingBalance = budgetStart-weeklySpending;
+let balanceMessage = document.querySelector(".no-more-money");
+balanceMessage.innerText = `$${remainingBalance}`;
+
+console.log(remainingBalance);
 
 });
 
