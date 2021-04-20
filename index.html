@@ -5,9 +5,58 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+  <title>My Budget</title>
 </head>
+
 <body>
+  <section class="weekly-budget">
+    <h1>Weekly Budget</h1>
+    <label>How much money do you have for the week?<input type="text" placeholder="$0.00"></label>
+    <button type="submit">Update Budget</button>
+  </section>
+
+  <section class="expenses">
+    <form>
+      <select name="catergories" id="categories">
+        <option>Entertainment</option>
+        <option>Food</option>
+        <option>Clothing</option>
+        <option>Bills</option>
+        <option>Other</option>
+      </select>
+      <input type="text" placeholder="Expense">
+      <input type="number" placeholder="Expense Amount">
+      <button type="submit">Add Expense</button>
+    </form>
+  </section>
+
+  <section class="outputs">
+    <div class="money-per-category">
+      <h2>Money Spent Per Category</h2>
+      <div>
+        Entertainment
+      </div>
+      <div>
+        Food
+      </div>
+      <div>
+        Clothing
+      </div>
+      <div>
+        Bills
+      </div>
+      <div>
+        Other
+      </div>
+    </div>
+    <div class="money-spent"> 
+      <h2>Weekly Spending</h2>
+    </div>
+    <div class="no-more-money"> 
+      <h2>Remaining Balance</h2>
+      Boom your broke!!!
+    </div>
+  </section>
 
 
 
