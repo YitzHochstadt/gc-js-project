@@ -40,6 +40,21 @@ button {
     font-size: 17px;
 }
 
+#categories  {
+    border-radius: 20px;
+    padding: 4px;
+    width: 150px;
+    font-family: 'Bebas Neue';
+}
+
+#budget-amount {
+    font-family: 'Bebas Neue';
+
+}
+
+.expenseForm {
+    font-family: 'Bebas Neue';
+}
 
 
 .weekly-budget {
