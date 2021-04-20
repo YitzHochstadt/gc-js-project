@@ -24,7 +24,9 @@ section {
 }
 
 input {
-    margin-left: 10px;;
+    margin-left: 10px;
+    border-radius: 20px;
+    padding: 5px;
 }
 
 button {
@@ -47,9 +49,8 @@ button {
     justify-content: center;
 }
 
-#entertainmentOutput {
-    margin-top: ;
-
+div {
+    margin-bottom: 10px;
 }
     
 
