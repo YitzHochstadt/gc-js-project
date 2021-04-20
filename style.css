@@ -34,10 +34,10 @@ button {
     background-color: black;
     color: green; 
     margin: 15px;
-    padding: 10px;
+    padding: 7px;
     width: 200px;
     font-family: 'Bebas Neue';
-    font-size: 17px;
+    font-size: 15px;
 }
 
 #categories  {
@@ -47,13 +47,10 @@ button {
     font-family: 'Bebas Neue';
 }
 
-#budget-amount {
+#budget-amount, #addExpenseAmount, #addExpense {
     font-family: 'Bebas Neue';
+    
 
-}
-
-.expenseForm {
-    font-family: 'Bebas Neue';
 }
 
 
