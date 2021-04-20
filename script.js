@@ -14,6 +14,7 @@ let foodSum = 0;
 let clothingSum = 0;
 let billsSum = 0;
 let otherSum = 0;
+let weeklySpending = 0;
 addExpense.addEventListener("submit", (e) =>{
   e.preventDefault();
  let getCategories = document.getElementById("categories").value
@@ -60,6 +61,12 @@ let billsTotal = document.getElementById("bills-output");
 billsTotal.innerText = `Bills: $${billsSum}`;
 let otherTotal = document.getElementById("other-output");
 otherTotal.innerText = `Other: $${otherSum}`;
+
+let weeklySpending = entertainmentSum+foodSum+clothingSum+billsSum+otherSum;
+let weeklyTotal = document.querySelector(".money-spent");
+weeklyTotal.innerText = `$${weeklySpending}`;
+
+
 
 });
 
