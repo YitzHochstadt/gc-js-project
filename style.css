@@ -1,0 +1,50 @@
+body {
+    font-family:'Bebas Neue';
+    background-image:repeating-linear-gradient(white, green, green );
+    display: flex;
+    flex-direction: column;
+    height: 100vw;
+    margin-top: 100px;
+}
+
+main {
+    margin: 0;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+section {
+    
+    text-align: center;
+    padding: 1px;
+}
+
+input {
+    margin-left: 10px;;
+}
+
+button {
+    border-radius: 20px;
+    background-color: black;
+    color: green; 
+    margin: 15px;
+    padding: 10px;
+    width: 200px;
+    font-family: 'Bebas Neue';
+    font-size: 17px;
+}
+
+
+
+.weekly-budget {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
