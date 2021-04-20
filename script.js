@@ -50,8 +50,16 @@ console.log("clothing sum: "+clothingSum);
 console.log("bills: "+billsSum);
 console.log("other sum: " +otherSum);
 
-let entertainmentTotal = document.getElementById("entertainmentOutput");
+let entertainmentTotal = document.getElementById("entertainment-output");
 entertainmentTotal.innerText = `Entertainment: $${entertainmentSum}`;
+let foodTotal = document.getElementById("food-output");
+foodTotal.innerText = `Food: $${foodSum}`;
+let clothingTotal = document.getElementById("clothing-output");
+clothingTotal.innerText = `Clothing: $${clothingSum}`;
+let billsTotal = document.getElementById("bills-output");
+billsTotal.innerText = `Bills: $${billsSum}`;
+let otherTotal = document.getElementById("other-output");
+otherTotal.innerText = `Other: $${otherSum}`;
 
 });
 
