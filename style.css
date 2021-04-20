@@ -1,6 +1,6 @@
 body {
     font-family:'Bebas Neue';
-    background-image:repeating-linear-gradient(white, green, green );
+    background-image:repeating-linear-gradient(green, white );
     display: flex;
     flex-direction: column;
     height: 100vw;
@@ -46,5 +46,11 @@ button {
     align-items: center;
     justify-content: center;
 }
+
+#entertainmentOutput {
+    margin-top: ;
+
+}
+    
 
 
