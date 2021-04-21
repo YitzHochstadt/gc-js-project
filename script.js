@@ -74,5 +74,15 @@ balanceMessage.innerText = `$${remainingBalance}`;
 
 console.log(remainingBalance);
 
+
+
+
+     if (remainingBalance < 0) {
+        alert ("NO MORE MONEY TO SPEND");
+    }
+console.log("NO MORE MONEY TO SPEND")
+
+
+
 });
 

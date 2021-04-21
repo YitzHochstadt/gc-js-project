@@ -17,8 +17,9 @@ h1 {
     font-size: 50px;
 }
 
+
+
 section {
-    
     text-align: center;
     padding: 1px;
 }
@@ -53,9 +54,6 @@ button {
 
 }
 
-option {
-
-}
 
 .weekly-budget {
     display: flex;
@@ -68,5 +66,7 @@ div {
     margin-bottom: 10px;
 }
     
+
+
 
 
