@@ -73,11 +73,27 @@ div {
     display:none;
 }
 
-
+.money-per-category{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
 
 @media screen and (min-width: 768) {
 
+    .money-per-category{
+        display: flex;
+       flex-direction: row;
+        
+        justify-content: center;
+    }   
+    
+    .expensebuttons{
+        display:flex;
+        flex-direction: column;
+
+    }
 
 body {
     display: flex;
