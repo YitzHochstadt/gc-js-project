@@ -1,9 +1,11 @@
 /*** WEEKLY BUDGET ***/
-
 function updateBalance(){
   let remainingBalance = budgetSum-weeklySpending;
   let balanceMessage = document.querySelector(".no-more-money");
   balanceMessage.innerText = `$${remainingBalance}`;
+  if (remainingBalance < 0) {
+    alert ("NO MORE MONEY TO SPEND");
+}
 }
 
 const weeklyButton = document.querySelector(".budget-form");
@@ -16,7 +18,6 @@ weeklyButton.addEventListener('submit', (e) => { e.preventDefault();
   updateBalance();
 });
 const addExpense = document.querySelector(".expenseForm");
-// const addExpense = document.getElementById("addExpenseButton");
 let entertainmentSum = 0;
 let foodSum = 0;
 let clothingSum = 0;
@@ -63,9 +64,4 @@ let weeklyTotal = document.querySelector(".money-spent");
 weeklyTotal.innerText = `$${weeklySpending}`;
 updateBalance();
 
-     if (remainingBalance < 0) {
-        alert ("NO MORE MONEY TO SPEND");
-    }
-
 });
-
