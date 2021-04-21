@@ -100,7 +100,7 @@ addExpense.addEventListener('submit', (e) => {
   console.log('bills: ' + billsSum);
   console.log('other sum: ' + otherSum);
 
-  let entertainmentTotal = document.getElementById('entertainment-button');
+  let entertainmentTotal = document.getElementById('entertainmentButton');
   entertainmentTotal.innerText = `Entertainment: $${entertainmentSum}`;
   let foodTotal = document.getElementById('foodButton');
   foodTotal.innerText = `Food: $${foodSum}`;
