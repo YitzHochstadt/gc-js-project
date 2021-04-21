@@ -1,11 +1,11 @@
 /*** WEEKLY BUDGET ***/
 const weeklyButton = document.querySelector(".budget-form");
+let budgetSum = 0;  
 weeklyButton.addEventListener('submit', (e) => { e.preventDefault();
-    let budgetAmount = document.getElementById("budget-amount").value;
-    let addedBudgetAmount = document.createElement("h5");
-    addedBudgetAmount.innerText = `Spending limit for the week: $${budgetAmount}`;
-    let dropPoint = document.querySelector(".budget-form");
-    dropPoint.append(addedBudgetAmount);
+  let budgetAmount = Number(document.getElementById("budget-amount").value);
+  budgetSum += budgetAmount;
+  let budgetTotal = document.getElementById("budget-total");
+  budgetTotal.innerText = `Spending limit for the week: $${budgetSum}`;
 });
 const addExpense = document.querySelector(".expenseForm");
 // const addExpense = document.getElementById("addExpenseButton");
