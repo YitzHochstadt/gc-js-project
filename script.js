@@ -17,6 +17,11 @@ weeklyButton.addEventListener('submit', (e) => { e.preventDefault();
   budgetTotal.innerText = `Spending limit for the week: $${budgetSum}`;
   updateBalance();
 });
+
+
+function dropDown (){
+  document.querySelectorAll(".dropDown")
+}
 const addExpense = document.querySelector(".expenseForm");
 let entertainmentSum = 0;
 let foodSum = 0;
@@ -28,6 +33,7 @@ addExpense.addEventListener("submit", (e) =>{
   e.preventDefault();
  let getCategories = document.getElementById("categories").value
  let getExpenseAmount = document.getElementById("addExpenseAmount").value;
+ let getExpenseMemo = document.getElementById("addExpense").value;
 
 //Get Expense detail, add for later.
  if (getCategories == "Entertainment"){
