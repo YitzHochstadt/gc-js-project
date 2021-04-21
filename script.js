@@ -54,6 +54,62 @@ addExpense.addEventListener("submit", (e) =>{
     otherSum += Number(getExpenseAmount);
   }
 
+ console.log(getCategories);
+ console.log(getExpenseAmount);
+ console.log(getExpenseMemo);
+
+ if ( getCategories == "Entertainment"){
+  console.log(getCategories + getExpenseAmount );
+    entertainmentSum += Number(getExpenseAmount);
+   
+    let entertainmentMemoLi = document.createElement ("li");
+    let memoEntertainmentContainer = document.getElementById("entertainmentDropdown");
+    memoEntertainmentContainer.append(entertainmentMemoLi);
+    memoEntertainmentContainer.innerHTML += `${getExpenseMemo} $${getExpenseAmount}`;
+   
+ }  else if (getCategories == "Food") {
+  console.log(getCategories + getExpenseAmount);
+    foodSum += Number(getExpenseAmount);
+
+    let foodMemoLi = document.createElement ("li");
+    let memoFoodContainer = document.getElementById("foodDropdown");
+    memoFoodContainer.append(foodMemoLi);
+    memoFoodContainer.innerHTML += `${getExpenseMemo} $${getExpenseAmount}`;
+
+
+ }else if (getCategories == "Clothing") {
+  console.log(getCategories + getExpenseAmount );
+    clothingSum += Number(getExpenseAmount);
+
+    let clothingMemoLi = document.createElement ("li");
+    let memoClothingContainer = document.getElementById("clothingDropdown");
+    memoClothingContainer.append(clothingMemoLi);
+    memoClothingContainer.innerHTML += `${getExpenseMemo} $${getExpenseAmount}`;
+}else if (getCategories == "Bills") {
+  console.log(getCategories + getExpenseAmount );
+  billsSum += Number(getExpenseAmount);
+
+  let billsMemoLi = document.createElement ("li");
+    let memoBillsContainer = document.getElementById("billsDropdown");
+    memoBillsContainer.append(entertainmentMemoLi);
+    memoBillsContainer.innerHTML += `${getExpenseMemo} $${getExpenseAmount}`;
+} else {
+  getCategories == "Other"
+  console.log(getCategories + getExpenseAmount);
+  otherSum += Number(getExpenseAmount);
+
+  let otherMemoLi = document.createElement ("li");
+    let memoOtherContainer = document.getElementById("otherDropdown");
+    memoOtherContainer.append(otherMemoLi);
+    memoOtherContainer.innerHTML += `${getExpenseMemo} $${getExpenseAmount}`;
+}
+
+console.log("Entertainment sum: " +entertainmentSum);
+console.log("food sum: " +foodSum);
+console.log("clothing sum: "+clothingSum);
+console.log("bills: "+billsSum);
+console.log("other sum: " +otherSum);
+
 let entertainmentTotal = document.getElementById("entertainment-output");
 entertainmentTotal.innerText = `Entertainment: $${entertainmentSum}`;
 let foodTotal = document.getElementById("food-output");
