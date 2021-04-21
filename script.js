@@ -26,6 +26,8 @@ let clothingSum = 0;
 let billsSum = 0;
 let otherSum = 0;
 let weeklySpending = 0;
+
+
 addExpense.addEventListener('submit', (e) => {
   e.preventDefault();
   let getCategories = document.getElementById('categories').value;
@@ -48,6 +50,7 @@ addExpense.addEventListener('submit', (e) => {
     );
     memoEntertainmentContainer.append(entertainmentMemoLi);
     memoEntertainmentContainer.innerHTML += `${getExpenseMemo} $${getExpenseAmount}`;
+    
       
 
 
@@ -99,13 +102,13 @@ addExpense.addEventListener('submit', (e) => {
 
   let entertainmentTotal = document.getElementById('entertainmentButton');
   entertainmentTotal.innerText = `Entertainment: $${entertainmentSum}`;
-  let foodTotal = document.getElementById('food-output');
+  let foodTotal = document.getElementById('foodButton');
   foodTotal.innerText = `Food: $${foodSum}`;
-  let clothingTotal = document.getElementById('clothing-output');
+  let clothingTotal = document.getElementById('clothingButton');
   clothingTotal.innerText = `Clothing: $${clothingSum}`;
-  let billsTotal = document.getElementById('bills-output');
+  let billsTotal = document.getElementById('billsButton');
   billsTotal.innerText = `Bills: $${billsSum}`;
-  let otherTotal = document.getElementById('other-output');
+  let otherTotal = document.getElementById('otherButton');
   otherTotal.innerText = `Other: $${otherSum}`;
 
   weeklySpending =
@@ -121,63 +124,36 @@ let entertainmentClick = document.getElementById("entertainmentButton");
 let entertainmentClickDropDown = document.getElementById("entertainmentDropdown");
 entertainmentClick.addEventListener("click", (e => {
   e.preventDefault();
-  if (entertainmentClickDropDown.style.display === "none"){
-    
-    entertainmentClickDropDown.style.display = "block";
-
-  }else {
-    entertainmentClickDropDown.style.display = "none";
-  }
+  entertainmentClickDropDown.classList.toggle("hidden")
+  
 }));
 
 let foodClick = document.getElementById("foodButton");
 let foodClickDropDown = document.getElementById("foodDropdown");
 foodClick.addEventListener("click", (e => {
   e.preventDefault();
-  if (foodClickDropDown.style.display === "none"){
-    
-    foodClickDropDown.style.display = "block";
-
-  }else {
-    foodClickDropDown.style.display = "none";
-  }
+  foodClickDropDown.classList.toggle("hidden")
 }));
 
 let clothingClick = document.getElementById("clothingButton");
 let clothingClickDropDown = document.getElementById("clothingDropdown");
 clothingClick.addEventListener("click", (e => {
   e.preventDefault();
-  if (clothingClickDropDown.style.display === "none"){
-    
-    clothingClickDropDown.style.display = "hidden";
-
-  }else {
-    clothingClickDropDown.style.display = "none";
-  }
+  clothingClickDropDown.classList.toggle("hidden")
 }));
 
 let billsClick = document.getElementById("billsButton");
 let billsClickDropDown = document.getElementById("billsDropdown");
 billsClick.addEventListener("click", (e => {
   e.preventDefault();
-  if (billsClickDropDown.style.display === "none"){
-    
-    billsClickDropDown.style.display = "block";
+  billsClickDropDown.classList.toggle("hidden")
 
-  }else {
-    billsClickDropDown.style.display = "none";
-  }
+ 
 }));
 
 let otherClick = document.getElementById("otherButton");
 let otherClickDropDown = document.getElementById("otherDropdown");
 otherClick.addEventListener("click", (e => {
   e.preventDefault();
-  if (otherClickDropDown.style.display === "none"){
-    
-    otherClickDropDown.style.display = "block";
-
-  }else {
-    otherClickDropDown.style.display = "none";
-  }
+  otherClickDropDown.classList.toggle("hidden")
 }));
