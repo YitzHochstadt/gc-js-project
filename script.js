@@ -19,9 +19,7 @@ weeklyButton.addEventListener('submit', (e) => { e.preventDefault();
 });
 
 
-function dropDown (){
-  document.querySelectorAll(".dropDown")
-}
+
 const addExpense = document.querySelector(".expenseForm");
 let entertainmentSum = 0;
 let foodSum = 0;
@@ -36,23 +34,7 @@ addExpense.addEventListener("submit", (e) =>{
  let getExpenseMemo = document.getElementById("addExpense").value;
 
 //Get Expense detail, add for later.
- if (getCategories == "Entertainment"){
-    console.log(getCategories + getExpenseAmount);
-    entertainmentSum += Number(getExpenseAmount);
-  } else if (getCategories == "Food") {
-    console.log(getCategories + getExpenseAmount);
-    foodSum += Number(getExpenseAmount);
-  } else if (getCategories == "Clothing") {
-    console.log(getCategories + getExpenseAmount);
-    clothingSum += Number(getExpenseAmount);
-  } else if (getCategories == "Bills") {
-    console.log(getCategories + getExpenseAmount);
-    billsSum += Number(getExpenseAmount);
-  } else {
-    getCategories == "Other"
-    console.log(getCategories + getExpenseAmount);
-    otherSum += Number(getExpenseAmount);
-  }
+
 
  console.log(getCategories);
  console.log(getExpenseAmount);
@@ -91,7 +73,7 @@ addExpense.addEventListener("submit", (e) =>{
 
   let billsMemoLi = document.createElement ("li");
     let memoBillsContainer = document.getElementById("billsDropdown");
-    memoBillsContainer.append(entertainmentMemoLi);
+    memoBillsContainer.append(billsMemoLi);
     memoBillsContainer.innerHTML += `${getExpenseMemo} $${getExpenseAmount}`;
 } else {
   getCategories == "Other"
