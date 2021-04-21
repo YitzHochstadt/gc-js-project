@@ -1,4 +1,11 @@
 /*** WEEKLY BUDGET ***/
+
+function updateBalance(){
+  let remainingBalance = budgetSum-weeklySpending;
+  let balanceMessage = document.querySelector(".no-more-money");
+  balanceMessage.innerText = `$${remainingBalance}`;
+}
+
 const weeklyButton = document.querySelector(".budget-form");
 let budgetSum = 0;  
 weeklyButton.addEventListener('submit', (e) => { e.preventDefault();
@@ -6,6 +13,7 @@ weeklyButton.addEventListener('submit', (e) => { e.preventDefault();
   budgetSum += budgetAmount;
   let budgetTotal = document.getElementById("budget-total");
   budgetTotal.innerText = `Spending limit for the week: $${budgetSum}`;
+  updateBalance();
 });
 const addExpense = document.querySelector(".expenseForm");
 // const addExpense = document.getElementById("addExpenseButton");
@@ -20,36 +28,24 @@ addExpense.addEventListener("submit", (e) =>{
  let getCategories = document.getElementById("categories").value
  let getExpenseAmount = document.getElementById("addExpenseAmount").value;
 
- 
 //Get Expense detail, add for later.
-
- console.log(getCategories);
- console.log(getExpenseAmount);
-
- if ( getCategories == "Entertainment"){
-  console.log(getCategories + getExpenseAmount );
+ if (getCategories == "Entertainment"){
+    console.log(getCategories + getExpenseAmount);
     entertainmentSum += Number(getExpenseAmount);
-   
- }  else if (getCategories == "Food") {
-  console.log(getCategories + getExpenseAmount);
+  } else if (getCategories == "Food") {
+    console.log(getCategories + getExpenseAmount);
     foodSum += Number(getExpenseAmount);
- }else if (getCategories == "Clothing") {
-  console.log(getCategories + getExpenseAmount );
+  } else if (getCategories == "Clothing") {
+    console.log(getCategories + getExpenseAmount);
     clothingSum += Number(getExpenseAmount);
-}else if (getCategories == "Bills") {
-  console.log(getCategories + getExpenseAmount );
-  billsSum += Number(getExpenseAmount);
-} else {
-  getCategories == "Other"
-  console.log(getCategories + getExpenseAmount);
-  otherSum += Number(getExpenseAmount);
-}
-
-console.log("Entertainment sum: " +entertainmentSum);
-console.log("food sum: " +foodSum);
-console.log("clothing sum: "+clothingSum);
-console.log("bills: "+billsSum);
-console.log("other sum: " +otherSum);
+  } else if (getCategories == "Bills") {
+    console.log(getCategories + getExpenseAmount);
+    billsSum += Number(getExpenseAmount);
+  } else {
+    getCategories == "Other"
+    console.log(getCategories + getExpenseAmount);
+    otherSum += Number(getExpenseAmount);
+  }
 
 let entertainmentTotal = document.getElementById("entertainment-output");
 entertainmentTotal.innerText = `Entertainment: $${entertainmentSum}`;
@@ -62,27 +58,14 @@ billsTotal.innerText = `Bills: $${billsSum}`;
 let otherTotal = document.getElementById("other-output");
 otherTotal.innerText = `Other: $${otherSum}`;
 
-let weeklySpending = entertainmentSum+foodSum+clothingSum+billsSum+otherSum;
+weeklySpending = entertainmentSum+foodSum+clothingSum+billsSum+otherSum;
 let weeklyTotal = document.querySelector(".money-spent");
 weeklyTotal.innerText = `$${weeklySpending}`;
-
-
-let budgetStart = document.getElementById("budget-amount").value;
-let remainingBalance = budgetStart-weeklySpending;
-let balanceMessage = document.querySelector(".no-more-money");
-balanceMessage.innerText = `$${remainingBalance}`;
-
-console.log(remainingBalance);
-
-
-
+updateBalance();
 
      if (remainingBalance < 0) {
         alert ("NO MORE MONEY TO SPEND");
     }
-console.log("NO MORE MONEY TO SPEND")
-
-
 
 });
 
