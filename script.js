@@ -48,6 +48,13 @@ addExpense.addEventListener('submit', (e) => {
     );
     memoEntertainmentContainer.append(entertainmentMemoLi);
     memoEntertainmentContainer.innerHTML += `${getExpenseMemo} $${getExpenseAmount}`;
+      
+
+
+
+    
+
+
   } else if (getCategories == 'Food') {
     console.log(getCategories + getExpenseAmount);
     foodSum += Number(getExpenseAmount);
@@ -108,14 +115,69 @@ addExpense.addEventListener('submit', (e) => {
   updateBalance();
 });
 
+
+
 let entertainmentClick = document.getElementById("entertainmentButton");
 let entertainmentClickDropDown = document.getElementById("entertainmentDropdown");
 entertainmentClick.addEventListener("click", (e => {
-  
+  e.preventDefault();
   if (entertainmentClickDropDown.style.display === "none"){
+    
     entertainmentClickDropDown.style.display = "block";
 
   }else {
     entertainmentClickDropDown.style.display = "none";
+  }
+}));
+
+let foodClick = document.getElementById("foodButton");
+let foodClickDropDown = document.getElementById("foodDropdown");
+foodClick.addEventListener("click", (e => {
+  e.preventDefault();
+  if (foodClickDropDown.style.display === "none"){
+    
+    foodClickDropDown.style.display = "block";
+
+  }else {
+    foodClickDropDown.style.display = "none";
+  }
+}));
+
+let clothingClick = document.getElementById("clothingButton");
+let clothingClickDropDown = document.getElementById("clothingDropdown");
+clothingClick.addEventListener("click", (e => {
+  e.preventDefault();
+  if (clothingClickDropDown.style.display === "none"){
+    
+    clothingClickDropDown.style.display = "hidden";
+
+  }else {
+    clothingClickDropDown.style.display = "none";
+  }
+}));
+
+let billsClick = document.getElementById("billsButton");
+let billsClickDropDown = document.getElementById("billsDropdown");
+billsClick.addEventListener("click", (e => {
+  e.preventDefault();
+  if (billsClickDropDown.style.display === "none"){
+    
+    billsClickDropDown.style.display = "block";
+
+  }else {
+    billsClickDropDown.style.display = "none";
+  }
+}));
+
+let otherClick = document.getElementById("otherButton");
+let otherClickDropDown = document.getElementById("otherDropdown");
+otherClick.addEventListener("click", (e => {
+  e.preventDefault();
+  if (otherClickDropDown.style.display === "none"){
+    
+    otherClickDropDown.style.display = "block";
+
+  }else {
+    otherClickDropDown.style.display = "none";
   }
 }));
