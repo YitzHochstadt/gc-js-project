@@ -1,9 +1,9 @@
 body {
     font-family:'Bebas Neue';
-    background-image:repeating-linear-gradient(green, white );
+    background-image: linear-gradient(darkgreen, green, white);
     display: flex;
     flex-direction: column;
-    height: 100vw;
+    height: 100vh;
     margin-top: 100px;
 }
 
@@ -34,10 +34,10 @@ button {
     background-color: black;
     color: green; 
     margin: 15px;
-    padding: 10px;
+    padding: 7px;
     width: 200px;
     font-family: 'Bebas Neue';
-    font-size: 17px;
+    font-size: 15px;
 }
 
 #categories  {
@@ -47,15 +47,15 @@ button {
     font-family: 'Bebas Neue';
 }
 
-#budget-amount {
+#budget-amount, #addExpenseAmount, #addExpense {
     font-family: 'Bebas Neue';
+    
 
 }
 
-.expenseForm {
-    font-family: 'Bebas Neue';
-}
+option {
 
+}
 
 .weekly-budget {
     display: flex;
