@@ -1,10 +1,9 @@
+
+
 body {
     font-family:'Bebas Neue';
     background-image: linear-gradient(darkgreen, green, white);
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    margin-top: 100px;
+    min-height: 100vh;
 }
 
 main {
@@ -15,6 +14,8 @@ main {
 h1 {
     text-align: center;
     font-size: 50px;
+   
+    
 }
 ul{
     list-style: none;
@@ -77,5 +78,66 @@ div {
 
 
 
+
+@media screen and (min-width: 768) {
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+h1 {
+    font-size: 40px;
+}
+
+
+
+section {
+    text-align: center;
+    padding: 1px;
+}
+
+input {
+    margin-left: 10px;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+button {
+    border-radius: 20px;
+    margin: 15px;
+    padding: 7px;
+    width: 200px;
+    font-size: 15px;
+}
+
+#categories  {
+    border-radius: 20px;
+    padding: 4px;
+    width: 150px;
+}
+
+#budget-amount, #addExpenseAmount, #addExpense {
+    
+
+}
+
+
+.weekly-budget {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+div {
+    margin-bottom: 10px;
+}
+    
+
+}
 
 
