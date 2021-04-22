@@ -7,7 +7,11 @@ function updateBalance() {
     alert("You're in debt, remove some spending for the week to get out of debt.");
   }
 }
-
+function updateWeeklySum(){
+  weeklySpending = entertainmentSum + foodSum + clothingSum + billsSum + otherSum;
+  let weeklyTotal = document.querySelector('.money-spent');
+  weeklyTotal.innerText = `$${weeklySpending}`;
+}
 
 
 const weeklyButton = document.querySelector('.budget-form');
@@ -19,7 +23,6 @@ weeklyButton.addEventListener('submit', (e) => {
   let budgetTotal = document.getElementById('budget-total');
   budgetTotal.innerText = `Spending limit for the week: $${budgetSum}`;
   updateBalance();
-  
 });
 
 const addExpense = document.querySelector('.expenseForm');
@@ -49,7 +52,7 @@ addExpense.addEventListener('submit', (e) => {
 
   if (getCategories == 'Entertainment') {
     
-    entertainmentSum += Number(getExpenseAmount);
+    entertainmentSum += getExpenseAmount;
 
     let memoEntertainmentContainer = document.getElementById('entertainmentDropdown');
     let entertainmentMemoLi = document.createElement('li');
@@ -68,7 +71,11 @@ addExpense.addEventListener('submit', (e) => {
     entertainmentMemoLi.addEventListener("click", finalDeleteEntertainment);
     function finalDeleteEntertainment(e){
           e.target.remove();
-          entertainmentSum -= getExpenseAmount;   
+          entertainmentSum -= getExpenseAmount;
+          let entertainmentTotal = document.getElementById('entertainmentButton');
+          entertainmentTotal.innerText = `Entertainment: $${entertainmentSum}`;
+          updateWeeklySum();
+          updateBalance();
       }
 
   } else if (getCategories == 'Food') {
@@ -91,6 +98,11 @@ addExpense.addEventListener('submit', (e) => {
     foodMemoLi.addEventListener("click", finalDeleteFood);
     function finalDeleteFood(e){
           e.target.remove();
+          foodSum -= getExpenseAmount;
+          let foodTotal = document.getElementById('foodButton');
+          foodTotal.innerText = `Food: $${foodSum}`;
+          updateWeeklySum();
+          updateBalance();
       }
 
   } else if (getCategories == 'Clothing') {
@@ -113,6 +125,11 @@ addExpense.addEventListener('submit', (e) => {
     clothingMemoLi.addEventListener("click", finalDeleteClothing);
     function finalDeleteClothing(e){
           e.target.remove();
+          clothingSum -= getExpenseAmount;
+          let clothingTotal = document.getElementById('clothingButton');
+          clothingTotal.innerText = `Clothing: $${clothingSum}`;
+          updateWeeklySum();
+          updateBalance();
       }
   
   } else if (getCategories == 'Bills') {
@@ -135,6 +152,11 @@ addExpense.addEventListener('submit', (e) => {
     billsMemoLi.addEventListener("click", finalDeleteBill);
     function finalDeleteBill(e){
           e.target.remove();
+          billsSum -= getExpenseAmount;
+          let billsTotal = document.getElementById('billsButton');
+          billsTotal.innerText = `Bills: $${billsSum}`;
+          updateWeeklySum();
+          updateBalance();
       }
 
   } else {
@@ -144,7 +166,7 @@ addExpense.addEventListener('submit', (e) => {
     let memoOtherContainer = document.getElementById('otherDropdown');
     let otherMemoLi = document.createElement('li');
     memoOtherContainer.append(otherMemoLi);
-    otherMemoLi.innerHTML = `${getExpenseMemo} $${getExpenseAmount} ` +newdate;
+    otherMemoLi.innerHTML = `${getExpenseMemo} $${getExpenseAmount} ` + newdate;
 
     otherMemoLi.addEventListener("mouseenter", deleteOther);
     function deleteOther(e){
@@ -158,6 +180,11 @@ addExpense.addEventListener('submit', (e) => {
     otherMemoLi.addEventListener("click", finalDeleteOther);
     function finalDeleteOther(e){
           e.target.remove();
+          otherSum -= getExpenseAmount;
+          let otherTotal = document.getElementById('otherButton');
+          otherTotal.innerText = `Other: $${otherSum}`;
+          updateWeeklySum();
+          updateBalance();
       }
   }
 
@@ -171,11 +198,7 @@ addExpense.addEventListener('submit', (e) => {
   billsTotal.innerText = `Bills: $${billsSum}`;
   let otherTotal = document.getElementById('otherButton');
   otherTotal.innerText = `Other: $${otherSum}`;
-
-  weeklySpending =
-    entertainmentSum + foodSum + clothingSum + billsSum + "" + otherSum;
-  let weeklyTotal = document.querySelector('.money-spent');
-  weeklyTotal.innerText = `$${weeklySpending}`;
+  updateWeeklySum();
   updateBalance();
 });
 
@@ -184,6 +207,13 @@ let entertainmentClickDropDown = document.getElementById("entertainmentDropdown"
 entertainmentClick.addEventListener("click", (e => {
   e.preventDefault();
   entertainmentClickDropDown.classList.toggle("hidden")
+}));
+
+let foodClick = document.getElementById("foodButton");
+let foodClickDropDown = document.getElementById("foodDropdown");
+foodClick.addEventListener("click", (e => {
+  e.preventDefault();
+  foodClickDropDown.classList.toggle("hidden")
 }));
 
 let clothingClick = document.getElementById('clothingButton');
