@@ -26,7 +26,7 @@ weeklyButton.addEventListener('submit', (e) => {
 });
 
 const addExpense = document.querySelector('.expenseForm');
-let entertainmentSum = 0;
+let entertainmentSum =0;
 let foodSum = 0;
 let clothingSum = 0;
 let billsSum = 0;
@@ -193,7 +193,11 @@ addExpense.addEventListener('submit', (e) => {
   billsTotal.innerText = `Bills: $${billsSum}`;
   let otherTotal = document.getElementById('otherButton');
   otherTotal.innerText = `Other: $${otherSum}`;
-  updateWeeklySum();
+
+  weeklySpending =
+    entertainmentSum + foodSum + clothingSum + billsSum + otherSum;
+  let weeklyTotal = document.querySelector('.money-spent');
+  weeklyTotal.innerText = `$${weeklySpending}`;
   updateBalance();
 });
 
