@@ -4,7 +4,7 @@ function updateBalance() {
   let balanceMessage = document.querySelector('.no-more-money');
   balanceMessage.innerText = `$${remainingBalance}`;
   if (remainingBalance < 0) {
-    alert('NO MORE MONEY TO SPEND');
+    alert("You're in debt, remove some spending for the week to get out of debt.");
   }
 }
 
@@ -31,74 +31,121 @@ let weeklySpending = 0;
 addExpense.addEventListener('submit', (e) => {
   e.preventDefault();
   let getCategories = document.getElementById('categories').value;
-  let getExpenseAmount = document.getElementById('addExpenseAmount').value;
+  let getExpenseAmount = Number(document.getElementById('addExpenseAmount').value);
   let getExpenseMemo = document.getElementById('addExpense').value;
 
-  //Get Expense detail, add for later.
-
-  console.log(getCategories);
-  console.log(getExpenseAmount);
-  console.log(getExpenseMemo);
-
   if (getCategories == 'Entertainment') {
-    console.log(getCategories + getExpenseAmount);
-    entertainmentSum += Number(getExpenseAmount);
+    entertainmentSum += getExpenseAmount;
 
+    let memoEntertainmentContainer = document.getElementById('entertainmentDropdown');
     let entertainmentMemoLi = document.createElement('li');
-    let memoEntertainmentContainer = document.getElementById(
-      'entertainmentDropdown'
-    );
     memoEntertainmentContainer.append(entertainmentMemoLi);
-    memoEntertainmentContainer.innerHTML += `${getExpenseMemo} $${getExpenseAmount}`;
-    
-      
+    entertainmentMemoLi.innerHTML += `${getExpenseMemo} $${getExpenseAmount}`;
 
-
-
-    
-
+    entertainmentMemoLi.addEventListener("mouseenter", deleteEntertainment);
+    function deleteEntertainment(e){
+      e.target.innerText = "Click to delete";
+      }
+    entertainmentMemoLi.addEventListener("mouseleave", unDeleteEntertainment);
+    function unDeleteEntertainment(e){
+      e.target.innerText = `${getExpenseMemo} $${getExpenseAmount}`;
+      e.target.style.color = "black";
+      }
+    entertainmentMemoLi.addEventListener("click", finalDeleteEntertainment);
+    function finalDeleteEntertainment(e){
+          e.target.remove();
+          entertainmentSum -= getExpenseAmount;   
+      }
 
   } else if (getCategories == 'Food') {
-    console.log(getCategories + getExpenseAmount);
-    foodSum += Number(getExpenseAmount);
+    foodSum += getExpenseAmount;
 
-    let foodMemoLi = document.createElement('li');
     let memoFoodContainer = document.getElementById('foodDropdown');
+    let foodMemoLi = document.createElement('li');
     memoFoodContainer.append(foodMemoLi);
-    memoFoodContainer.innerHTML += `${getExpenseMemo} $${getExpenseAmount}`;
-  } else if (getCategories == 'Clothing') {
-    console.log(getCategories + getExpenseAmount);
-    clothingSum += Number(getExpenseAmount);
+    foodMemoLi.innerHTML += `${getExpenseMemo} $${getExpenseAmount}`;
 
-    let clothingMemoLi = document.createElement('li');
+    foodMemoLi.addEventListener("mouseenter", deleteFood);
+    function deleteFood(e){
+      e.target.innerText = "Click to delete";
+      }
+    foodMemoLi.addEventListener("mouseleave", unDeleteFood);
+    function unDeleteFood(e){
+      e.target.innerText = `${getExpenseMemo} $${getExpenseAmount}`;
+      e.target.style.color = "black";
+      }
+    foodMemoLi.addEventListener("click", finalDeleteFood);
+    function finalDeleteFood(e){
+          e.target.remove();
+      }
+
+  } else if (getCategories == 'Clothing') {
+    clothingSum += getExpenseAmount;
+ 
     let memoClothingContainer = document.getElementById('clothingDropdown');
+    let clothingMemoLi = document.createElement('li');
     memoClothingContainer.append(clothingMemoLi);
-    memoClothingContainer.innerHTML += `${getExpenseMemo} $${getExpenseAmount}`;
+    clothingMemoLi.innerHTML += `${getExpenseMemo} $${getExpenseAmount}`;
+
+    clothingMemoLi.addEventListener("mouseenter", deleteClothing);
+    function deleteClothing(e){
+      e.target.innerText = "Click to delete";
+      }
+    clothingMemoLi.addEventListener("mouseleave", unDeleteClothing);
+    function unDeleteClothing(e){
+      e.target.innerText = `${getExpenseMemo} $${getExpenseAmount}`;
+      e.target.style.color = "black";
+      }
+    clothingMemoLi.addEventListener("click", finalDeleteClothing);
+    function finalDeleteClothing(e){
+          e.target.remove();
+      }
   
   } else if (getCategories == 'Bills') {
-    console.log(getCategories + getExpenseAmount);
-    billsSum += Number(getExpenseAmount);
+    billsSum += getExpenseAmount;
 
-    let billsMemoLi = document.createElement('li');
     let memoBillsContainer = document.getElementById('billsDropdown');
+    let billsMemoLi = document.createElement('li');
     memoBillsContainer.append(billsMemoLi);
-    memoBillsContainer.innerHTML += `${getExpenseMemo} $${getExpenseAmount}`;
+    billsMemoLi.innerHTML += `${getExpenseMemo} $${getExpenseAmount}`;
+
+    billsMemoLi.addEventListener("mouseenter", deleteBill);
+    function deleteBill(e){
+      e.target.innerText = "Click to delete";
+      }
+    billsMemoLi.addEventListener("mouseleave", unDeleteBill);
+    function unDeleteBill(e){
+      e.target.innerText = `${getExpenseMemo} $${getExpenseAmount}`;
+      e.target.style.color = "black";
+      }
+    billsMemoLi.addEventListener("click", finalDeleteBill);
+    function finalDeleteBill(e){
+          e.target.remove();
+      }
+
   } else {
     getCategories == 'Other';
-    console.log(getCategories + getExpenseAmount);
-    otherSum += Number(getExpenseAmount);
+    otherSum += getExpenseAmount;
 
-    let otherMemoLi = document.createElement('li');
     let memoOtherContainer = document.getElementById('otherDropdown');
+    let otherMemoLi = document.createElement('li');
     memoOtherContainer.append(otherMemoLi);
-    memoOtherContainer.innerHTML += `${getExpenseMemo} $${getExpenseAmount}`;
-  }
+    otherMemoLi.innerHTML = `${getExpenseMemo} $${getExpenseAmount}`;
 
-  console.log('Entertainment sum: ' + entertainmentSum);
-  console.log('food sum: ' + foodSum);
-  console.log('clothing sum: ' + clothingSum);
-  console.log('bills: ' + billsSum);
-  console.log('other sum: ' + otherSum);
+    otherMemoLi.addEventListener("mouseenter", deleteOther);
+    function deleteOther(e){
+      e.target.innerText = "Click to delete";
+      }
+    otherMemoLi.addEventListener("mouseleave", unDeleteOther);
+    function unDeleteOther(e){
+      e.target.innerText = `${getExpenseMemo} $${getExpenseAmount}`;
+      e.target.style.color = "black";
+      }
+    otherMemoLi.addEventListener("click", finalDeleteOther);
+    function finalDeleteOther(e){
+          e.target.remove();
+      }
+  }
 
   let entertainmentTotal = document.getElementById('entertainmentButton');
   entertainmentTotal.innerText = `Entertainment: $${entertainmentSum}`;
@@ -118,14 +165,11 @@ addExpense.addEventListener('submit', (e) => {
   updateBalance();
 });
 
-
-
 let entertainmentClick = document.getElementById("entertainmentButton");
 let entertainmentClickDropDown = document.getElementById("entertainmentDropdown");
 entertainmentClick.addEventListener("click", (e => {
   e.preventDefault();
   entertainmentClickDropDown.classList.toggle("hidden")
-  
 }));
 
 let foodClick = document.getElementById("foodButton");
@@ -147,8 +191,6 @@ let billsClickDropDown = document.getElementById("billsDropdown");
 billsClick.addEventListener("click", (e => {
   e.preventDefault();
   billsClickDropDown.classList.toggle("hidden")
-
- 
 }));
 
 let otherClick = document.getElementById("otherButton");

@@ -136,12 +136,6 @@ button {
     width: 150px;
 }
 
-#budget-amount, #addExpenseAmount, #addExpense {
-    
-
-}
-
-
 .weekly-budget {
     display: flex;
     flex-direction: row;
