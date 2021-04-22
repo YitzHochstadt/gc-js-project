@@ -72,7 +72,6 @@ addExpense.addEventListener('submit', (e) => {
     function finalDeleteEntertainment(e){
           e.target.remove();
           entertainmentSum -= getExpenseAmount;
-          let entertainmentTotal = document.getElementById('entertainmentButton');
           entertainmentTotal.innerText = `Entertainment: $${entertainmentSum}`;
           updateWeeklySum();
           updateBalance();
@@ -99,7 +98,6 @@ addExpense.addEventListener('submit', (e) => {
     function finalDeleteFood(e){
           e.target.remove();
           foodSum -= getExpenseAmount;
-          let foodTotal = document.getElementById('foodButton');
           foodTotal.innerText = `Food: $${foodSum}`;
           updateWeeklySum();
           updateBalance();
@@ -126,7 +124,6 @@ addExpense.addEventListener('submit', (e) => {
     function finalDeleteClothing(e){
           e.target.remove();
           clothingSum -= getExpenseAmount;
-          let clothingTotal = document.getElementById('clothingButton');
           clothingTotal.innerText = `Clothing: $${clothingSum}`;
           updateWeeklySum();
           updateBalance();
@@ -153,7 +150,6 @@ addExpense.addEventListener('submit', (e) => {
     function finalDeleteBill(e){
           e.target.remove();
           billsSum -= getExpenseAmount;
-          let billsTotal = document.getElementById('billsButton');
           billsTotal.innerText = `Bills: $${billsSum}`;
           updateWeeklySum();
           updateBalance();
@@ -181,7 +177,6 @@ addExpense.addEventListener('submit', (e) => {
     function finalDeleteOther(e){
           e.target.remove();
           otherSum -= getExpenseAmount;
-          let otherTotal = document.getElementById('otherButton');
           otherTotal.innerText = `Other: $${otherSum}`;
           updateWeeklySum();
           updateBalance();
