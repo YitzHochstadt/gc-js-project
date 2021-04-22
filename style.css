@@ -86,7 +86,7 @@ div {
     flex-direction: column;
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 768px) {
 
     #addExpenseAmount,
     #addExpense {
@@ -165,6 +165,47 @@ div {
    
     
 }
+
+#entertainmentDropdown{
+    display: inline;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 50px;
+
+}
+#foodDropdown {
+    display: inline;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 46px;
+}
+#clothingDropdown {
+    display: inline;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 30px;
+    
+
+}
+#billsDropdown {
+    display: inline;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 60px;
+}
+#otherDropdown {
+    display: inline;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 65px;
+     
+}
+
+.weekly {
+    margin-top: 50px;
+   
+}
+
 
 
 
