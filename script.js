@@ -7,6 +7,7 @@ function updateBalance() {
     alert("You're in debt, remove some spending for the week to get out of debt.");
   }
 }
+let weeklySpending = 0;
 function updateWeeklySum(){
   weeklySpending = entertainmentSum + foodSum + clothingSum + billsSum + otherSum;
   let weeklyTotal = document.querySelector('.money-spent');
@@ -31,8 +32,6 @@ let foodSum = 0;
 let clothingSum = 0;
 let billsSum = 0;
 let otherSum = 0;
-let weeklySpending = 0;
-let getTime = Date();
 
 var dateObj = new Date();
 var month = dateObj.getUTCMonth() + 1; //months from 1-12
@@ -194,26 +193,23 @@ addExpense.addEventListener('submit', (e) => {
   let otherTotal = document.getElementById('otherButton');
   otherTotal.innerText = `Other: $${otherSum}`;
 
-  weeklySpending =
-    entertainmentSum + foodSum + clothingSum + billsSum + otherSum;
-  let weeklyTotal = document.querySelector('.money-spent');
-  weeklyTotal.innerText = `$${weeklySpending}`;
+  updateWeeklySum();
   updateBalance();
 });
 
 let entertainmentClick = document.getElementById("entertainmentButton");
 let entertainmentClickDropDown = document.getElementById("entertainmentDropdown");
-entertainmentClick.addEventListener("click", (e => {
+entertainmentClick.addEventListener("click", (e) => {
   e.preventDefault();
   entertainmentClickDropDown.classList.toggle("hidden")
-}));
+});
 
 let foodClick = document.getElementById("foodButton");
 let foodClickDropDown = document.getElementById("foodDropdown");
-foodClick.addEventListener("click", (e => {
+foodClick.addEventListener("click", (e) => {
   e.preventDefault();
   foodClickDropDown.classList.toggle("hidden")
-}));
+});
 
 let clothingClick = document.getElementById('clothingButton');
 let clothingClickDropDown = document.getElementById('clothingDropdown');
@@ -231,8 +227,12 @@ billsClick.addEventListener('click', (e) => {
 
 let otherClick = document.getElementById("otherButton");
 let otherClickDropDown = document.getElementById("otherDropdown");
-otherClick.addEventListener("click", (e => {
+otherClick.addEventListener("click", (e) => {
   e.preventDefault();
   otherClickDropDown.classList.toggle("hidden")
+<<<<<<< Updated upstream
 
 }));
+=======
+});
+>>>>>>> Stashed changes
