@@ -107,6 +107,21 @@ header{
     display: none;
   }
 
+.share {
+    display: flex;
+    align-items:center;
+    margin-top: 30px;
+}
+
+.share a {
+    color: darkgreen;
+}
+  #email {
+    font-family: 'Bebas Neue';
+    height: 20px;
+    width: 150px;
+}
+
 @media screen and (min-width: 1100px) {
 
     #addExpenseAmount,
@@ -222,6 +237,13 @@ header{
     margin-top: 50px;
    
 }
+
+.share {
+    display: flex;
+    
+    
+}
+
 
 
 

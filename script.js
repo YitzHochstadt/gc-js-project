@@ -234,4 +234,5 @@ let otherClickDropDown = document.getElementById("otherDropdown");
 otherClick.addEventListener("click", (e => {
   e.preventDefault();
   otherClickDropDown.classList.toggle("hidden")
+
 }));
