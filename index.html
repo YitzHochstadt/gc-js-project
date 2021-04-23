@@ -14,9 +14,9 @@
 <body>
 <header>
   <ul>
-    <a href="#remainingBudgetNav">Remaining Balance</a>
-    <a a href= "#moneySpentNav">Weekly Spending</a>
-    <a href= "#moneyPerCategoryNav">Spending Categories</a>
+    <a id ="remainingBalanceNav" href="#remainingBudgetNav">Remaining Balance</a>
+    <a id = "weeklySpendingNav"a href= "#moneySpentNav">Weekly Spending</a>
+    <a id = "spendingCategoriesHover" href= "#moneyPerCategoryNav">Spending Categories</a>
     
     
   </ul>
@@ -24,7 +24,7 @@
     <h1>Weekly Budget</h1>
   <section class="weekly-budget">
     <form class="budget-form">
-      <label>How much money do you have for the week?<input type="number" id="budget-amount" placeholder="$0.00"></label>
+      <label >How much money do you have for the week?<input type="number" id="budget-amount" placeholder="$0.00"></label>
       <button type="submit">Update Budget</button>
       <div id="budget-total">Spending limit for the week: $0</div>
     </form>
@@ -76,7 +76,7 @@
     </div>
 
     <h2>Remaining Balance :</h2>
-    <div id= "remainingBudgetNav"class="no-more-money"> 
+    <div id="remainingBudgetNav"class="no-more-money"> 
 
     </div>
   </section>

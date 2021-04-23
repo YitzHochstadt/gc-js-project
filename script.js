@@ -1,4 +1,3 @@
-/*** WEEKLY BUDGET ***/
 function updateBalance() {
   let remainingBalance = budgetSum - weeklySpending;
   let balanceMessage = document.querySelector('.no-more-money');
@@ -195,6 +194,7 @@ addExpense.addEventListener('submit', (e) => {
 
   updateWeeklySum();
   updateBalance();
+
 });
 
 let entertainmentClick = document.getElementById("entertainmentButton");
@@ -230,9 +230,47 @@ let otherClickDropDown = document.getElementById("otherDropdown");
 otherClick.addEventListener("click", (e) => {
   e.preventDefault();
   otherClickDropDown.classList.toggle("hidden")
-<<<<<<< Updated upstream
 
-}));
-=======
 });
->>>>>>> Stashed changes
+
+
+let remainingBalanceHover = document.getElementById("remainingBalanceNav");
+let weeklySpendingHover = document.getElementById("weeklySpendingNav"); 
+let spendingCategoriesHover = document.getElementById("spendingCategoriesHover")
+
+remainingBalanceHover.addEventListener("mouseover", silverColorBudget);
+weeklySpendingHover.addEventListener("mouseover", silverColorSpending);
+spendingCategoriesHover.addEventListener("mouseover", getSilver);
+
+function getSilver(e) {
+  e.target.classList.add("silver");
+}
+
+function silverColorBudget(e){
+  e.target.innerHTML =budgetSum - weeklySpending;
+  e.target.classList.add("silver");
+  
+}
+
+function silverColorSpending(e){
+  e.target.innerHTML =weeklySpending;
+  e.target.classList.add("silver");
+  
+}
+
+remainingBalanceHover.addEventListener("mouseleave", silveOutBudget);
+weeklySpendingHover.addEventListener("mouseleave", silverOutSpending);
+spendingCategoriesHover.addEventListener("mouseleave", getOutSilver);
+
+function getOutSilver(e) {
+  e.target.classList.remove("silver");
+}
+function silveOutBudget(e){
+  e.target.innerText ="REMAINING BALANCE"
+  e.target.classList.remove("silver");
+}
+function silverOutSpending(e){
+  e.target.innerText ="Weekly Spending"
+  e.target.classList.remove("silver");
+}
+ 
